@@ -31,7 +31,139 @@
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-      
+
+    <style>
+        .post-interactions {
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center items vertically */
+            padding: 10px; /* Add some padding around the container */
+        }
+
+        .like-icon, .comment-icon {
+            display: flex; /* Use flex for icon and count */
+            align-items: center; /* Center items vertically */
+            color: #007bff; /* Bootstrap primary color for the icons */
+            font-size: 16px; /* Set a base font size */
+            margin-right: 20px; /* Space between like and comment icons */
+            cursor: pointer; /* Change cursor to pointer for interactivity */
+        }
+
+        .like-icon i, .comment-icon i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        #likeCount, #commentCount {
+            font-weight: bold; /* Make the counts bold */
+        }
+
+        /* Optional hover effects */
+        .like-icon:hover, .comment-icon:hover {
+            color: #0056b3; /* Darken color on hover */
+        }
+        .section-tittle {
+            margin-bottom: 20px; /* Space below the title */
+        }
+
+        .section-tittle h3 {
+            font-size: 24px; /* Increase the font size for the title */
+            color: #333; /* Darker color for better readability */
+            font-weight: bold; /* Make the title bold */
+        }
+
+        .social-share {
+            background-color: #f8f9fa; /* Light background for the share section */
+            padding: 20px; /* Padding around the section */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .social-share h3 {
+            display: inline; /* Keep the title in the same line */
+        }
+
+        .social-share ul {
+            list-style: none; /* Remove default list styling */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox for horizontal alignment */
+            align-items: center; /* Center items vertically */
+        }
+
+        .social-share li {
+            margin-right: 15px; /* Space between icons */
+        }
+
+        .social-share img {
+            width: 24px; /* Set a consistent width for icons */
+            height: auto; /* Maintain aspect ratio */
+            transition: transform 0.2s; /* Smooth scaling effect on hover */
+        }
+
+        .social-share img:hover {
+            transform: scale(1.1); /* Scale up the icon on hover */
+        }
+
+        .section-tittle {
+            margin-bottom: 20px; /* Space below the title */
+        }
+
+        .section-tittle h3 {
+            font-size: 24px; /* Font size for the section title */
+            color: #333; /* Dark color for better readability */
+            font-weight: bold; /* Bold text */
+        }
+
+        .single-follow {
+            background-color: #f9f9f9; /* Light background for the follow section */
+            padding: 20px; /* Padding around the section */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .follow-us {
+            margin-bottom: 15px; /* Space between each follow item */
+            align-items: center; /* Center items vertically */
+        }
+
+        .follow-social img {
+            width: 40px; /* Consistent size for social icons */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px; /* Space between icon and count */
+            transition: transform 0.2s; /* Smooth scaling effect on hover */
+        }
+
+        .follow-social img:hover {
+            transform: scale(1.1); /* Scale up icon on hover */
+        }
+
+        .follow-count {
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack the count and label */
+        }
+
+        .follow-count span {
+            font-size: 20px; /* Larger font for follower count */
+            font-weight: bold; /* Bold for emphasis */
+            color: #007bff; /* Primary color */
+        }
+
+        .follow-count p {
+            margin: 0; /* Remove default margin */
+            font-size: 14px; /* Font size for label */
+            color: #666; /* Grey color for label */
+        }
+
+        .news-poster {
+            margin-top: 30px; /* Space above the news poster */
+            text-align: center; /* Center align the image */
+        }
+
+        .news-poster img {
+            max-width: 100%; /* Responsive image */
+            border-radius: 10px; /* Rounded corners for the image */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -97,9 +229,6 @@
                                         <span id="likeIcon" class="like-icon"><i class="fa fa-thumbs-up"></i> <span
                                                 id="likeCount">0</span></span>
 
-                                        <!-- Button to View Users Who Liked (opens modal) -->
-                                        <button id="viewLikesButton" class="btn btn-link" data-toggle="modal"
-                                            data-target="#likeModal">Like</button>
 
                                         <!-- Comments (Modal Trigger) -->
                                         <span><i class="fa fa-comments" data-toggle="modal"
