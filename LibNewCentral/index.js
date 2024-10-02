@@ -8,7 +8,11 @@ const cron = require('node-cron');
 const { saveNewsToDatabase, getLatestNews, getRandomNews, getOneLatestNews, getRandomLatestNews, getNewsWithLimit } = require('./database');
 //const db = require('./cronJobs'); // This imports the cron jobs
 const app = express();
-const port = 4000;
+const port = 5000;
+
+//pwa variable declaration
+// const pwa = require('express-pwa');
+//pwa variable declaration end
 
 // Set up EJS as the template engine
 app.set('view engine', 'ejs');
